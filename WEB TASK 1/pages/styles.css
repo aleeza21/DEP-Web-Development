@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #ffffff; /* Dark purple background */
-    color: #000000; /* White text color */
-    padding-bottom: 60px; /* Ensure enough space at the bottom */
+    background: #ffffff; 
+    color: #000000; 
+    padding-bottom: 60px; 
 }
 
 header {
-    background: rgba(44, 25, 62, 0.8); /* Dark purple with less opacity */
+    background: rgba(44, 25, 62, 0.8); 
     padding: 10px 0;
 }
 
@@ -31,12 +31,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #ffffff; /* White text color */
+    color: #ffffff; 
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #c509fe; /* Light blue on hover */
+    color: #c509fe; 
 }
 
 .hero {
@@ -48,7 +48,7 @@ nav ul li a:hover {
 
 .hero-content {
     text-align: center;
-    color: #000000; /* White text color */
+    color: #000000; 
 }
 
 .profile-image {
@@ -65,7 +65,7 @@ section.about {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    color: #000000; /* White text color */
+    color: #000000; 
 }
 
 .about-content {
@@ -97,14 +97,14 @@ section.about {
 
 section h1 {
     font-size: 2em;
-    color: #000000; /* White heading color */
+    color: #000000; 
     width: 100%;
     text-align: left;
 }
 
 section.portfolio {
     text-align: center;
-    color: #000000; /* White text color */
+    color: #000000; 
 }
 
 .portfolio-sections {
@@ -116,18 +116,18 @@ section.portfolio {
 
 .portfolio-item {
     flex: 1;
-    border: 1px solid #810ffa; /* Light blue border */
+    border: 1px solid #810ffa; 
     border-radius: 10px;
     padding: 20px;
-    background: rgba(44, 25, 62, 0.1); /* Dark purple with less opacity */
+    background: rgba(44, 25, 62, 0.1); 
 }
 
 .portfolio-item h2 {
-    color: #000000; /* White heading color */
+    color: #000000;
 }
 
 .portfolio-item a {
-    color: #810ffa; /* Light blue links */
+    color: #810ffa; 
     text-decoration: none;
     font-weight: bold;
 }
@@ -152,7 +152,7 @@ section.portfolio {
 section.services {
     text-align: center;
     padding: 20px;
-    color: #000000; /* White text color */
+    color: #000000; 
 }
 
 .service-packages {
@@ -163,17 +163,17 @@ section.services {
 }
 
 .service-package {
-    border: 1px solid #810ffa; /* Light blue border */
+    border: 1px solid #810ffa; 
     border-radius: 10px;
     padding: 20px;
-    background: rgba(44, 25, 62, 0.1); /* Dark purple with less opacity */
+    background: rgba(44, 25, 62, 0.1); 
     width: 80%;
     max-width: 800px;
-    text-align: left; /* Ensure left alignment for content */
+    text-align: left; 
 }
 
 .service-package h2 {
-    color: #000000; /* White heading color */
+    color: #000000; 
 }
 
 .service-package ul {
@@ -182,27 +182,27 @@ section.services {
 }
 
 .service-package li {
-    margin-bottom: 10px; /* Reduced margin for better spacing */
+    margin-bottom: 10px; 
 }
 
 .service-package button {
-    background: #810ffa; /* Light blue button */
-    color: #000000; /* Black text color */
+    background: #810ffa; 
+    color: #000000; 
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
     display: block;
-    margin: 10px 0 0 auto; /* Align button to the right */
+    margin: 10px 0 0 auto;
 }
 
 .service-package button:hover {
-    background: #810ffa; /* Light blue on hover */
+    background: #810ffa; 
 }
 
 .contact h1 {
     margin: 30px;
-    color: #000000; /* White heading color */
+    color: #000000; 
 
 }
 
@@ -219,7 +219,7 @@ form {
 form label {
     margin-top: 10px;
     font-weight: bold;
-    color: #000000; /* White label text */
+    color: #000000;
 }
 
 form input, form textarea, form button {
@@ -229,22 +229,22 @@ form input, form textarea, form button {
 }
 
 form button {
-    background: #bc89cb;/* Light blue button */
-    color: #000000; /* Black text color */
+    background: #bc89cb;
+    color: #000000; 
     border: none;
     cursor: pointer;
     margin-top: 20px;
 }
 
 form button:hover {
-    background: #c509fe;  /* Light blue on hover */
+    background: #c509fe; 
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
-    background: rgba(44, 25, 62, 0.8); /* Dark purple footer */
-    color: #ffffff; /* White text color */
+    background: rgba(44, 25, 62, 0.8);
+    color: #ffffff;
     position: fixed;
     width: 100%;
     bottom: 0;
