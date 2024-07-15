@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read Blog</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="vertical-align">
+        <div id="blog"></div>
+        <div id="blogButtons" class="blog-buttons"></div>
+        <a href="/create.html" class="btn">Back to All Blogs</a>
+    </div>
+
+    <script>
+      async function fetchBlog() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get("id");
+        const response = await fetch(`/api/blogs/${blogId}`);
+        const blog = await response.json();
+        const blogDiv = document.getElementById("blog");
+        blogDiv.innerHTML = `
+            <h2>${blog.title}</h2>
+            <p>${blog.content}</p>
+        `;
+        const blogButtons = document.getElementById("blogButtons");
+        blogButtons.innerHTML = `
+            <a href="/edit.html?id=${blog._id}" class="btn btn-edit">Edit</a>
+            <button onclick="confirmDelete('${blog._id}')" class="btn btn-delete">Delete</button>
+        `;
+      }
+
+      async function deleteBlog(id) {
+        const response = await fetch(`/api/blogs/${id}`, {
+          method: "DELETE",
+        });
+        const result = await response.json();
+        alert(result.message);
+        window.location.href = "/create.html";
+      }
+
+      function confirmDelete(id) {
+        if (window.confirm("Are you sure you want to delete this blog post?")) {
+          deleteBlog(id);
+        }
+      }
+
+      fetchBlog();
+    </script>
+</body>
+</html>

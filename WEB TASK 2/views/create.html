@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+    <link rel="stylesheet" href="/styles.css">
+    
+</head>
+<body>
+    <div class="container1">
+        <h1>All Blogs</h1>
+        <button class="btn" id="createBlogBtn">Add Blog</button>
+        
+        <!-- Modal for creating a new blog -->
+        <div id="createBlogModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Create New Blog</h2>
+                <div id="message"></div>
+                <form id="addBlogForm">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Content:</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Add Blog</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="blogs"></div>
+        <a href="/" id="backToHome" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        async function fetchBlogs() {
+            const response = await fetch("/api/blogs");
+            const blogs = await response.json();
+            const blogsDiv = document.getElementById("blogs");
+            blogsDiv.innerHTML = "";
+            blogs.forEach((blog) => {
+                const blogContainer = document.createElement("div");
+                blogContainer.classList.add("blog-container");
+                blogContainer.innerHTML = `
+                    <h2>${blog.title}</h2>
+                    <p>${blog.content}</p>
+                    <a href="/read.html?id=${blog._id}" class="btn">Read</a>
+                `;
+                blogsDiv.appendChild(blogContainer);
+            });
+        }
+
+        async function addBlog(event) {
+            event.preventDefault();
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+            const response = await fetch("/api/blogs", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ title, content }),
+            });
+            const result = await response.json();
+            document.getElementById("message").innerText = result.message;
+            closeModal(); // Close modal after adding blog
+            fetchBlogs(); // Refresh the blogs list
+        }
+
+        function openModal() {
+            document.getElementById("createBlogModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("createBlogModal").style.display = "none";
+        }
+
+        document
+            .getElementById("createBlogBtn")
+            .addEventListener("click", openModal);
+        document
+            .getElementById("addBlogForm")
+            .addEventListener("submit", addBlog);
+        fetchBlogs();
+    </script>
+</body>
+</html>
