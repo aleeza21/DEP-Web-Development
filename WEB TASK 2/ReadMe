@@ -1,0 +1,12 @@
+Running the code:
+
+
+1) In the VS Code run the command "npm install" in the terminal it will install all teh dependencies beacuase node_modules is too large to upload.
+2) run the MongoDBCompass and connect it with the VSCode by first copying the URL from the  MongoDBCompass and paste it in the add form section of MongoDB extension of VSCode (the databse is connected)
+3) run the command "node index.js" to run the project and and link on teh link of localhost to interact with teh appliaction on your web browser.
+
+Now you can add, delete, edit, and read blogs.
+
+
+Note: 
+Each html file contain its own script for handling the functions and the styles are collectively written in the styles.css file.
