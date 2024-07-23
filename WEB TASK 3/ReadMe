@@ -1,0 +1,11 @@
+Steps to Run the Application:
+
+1) first run the npm start command on both the directories
+2) then on your MongoDB Compass connect with teh localhost port # 27017
+3) Install the extension "MongoDB for VS Code" and connect it as well 
+4) Run the command "node index.js" for the backend
+5) Run the command  "npm start" to run teh application on browser
+
+
+the dependency Cors is used to handle the application running on different ports the backend is running on port 5000 and 
+frontend is running on port 3000.
