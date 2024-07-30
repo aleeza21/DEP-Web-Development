@@ -1,0 +1,4 @@
+Socket.IO is used for real-time communication. When a user selects a category on the frontend, 
+the backend emits a notification through the socket connection. This notification displays an alert informing 
+the user of a randomly generated number of shoes sold in that category, encouraging them to make a purchase before 
+stocks run out.
